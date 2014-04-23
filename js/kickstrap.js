@@ -2,7 +2,7 @@
   window.k$ = {
     apps: ['ks:sample-app', 'ks:tinygrowl', 'ks:ang-app', 'ks:kickstrap-logo'],
     angular: {
-      controllers: ['messages', 'products', 'docs', 'home', 'login', 'webController'],
+      controllers: ['messages', 'products', 'docs', 'home', 'login'],
       directives: ['enter', 'visible', 'repeat'],
       filters: ['startFrom'],
       pages: ['first-steps', 'apps', 'api', 'coffeescript', 'jade', 'pages', 'partials', 'roots', 'stylus', 'templates', 'acknowledgments', 'optimizations', 'social-login', 'growls']
