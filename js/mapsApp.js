@@ -11,7 +11,7 @@ function init() {
         scrollwheel: false,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(40.6700, -73.9400), // New York
+        center: new google.maps.LatLng(66.505648,25.688503), // Rovaniemi
 
         // How you would like to style the map. 
         // This is where you would paste any style found on Snazzy Maps.
