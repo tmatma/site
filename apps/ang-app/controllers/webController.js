@@ -1,10 +1,11 @@
 (function() {
   define(['./module'], function(controllers) {
-    return controllers.controller('webController', [
+    return controllers.controller('webCtrl', [
       '$scope', function($scope) {
         var test;
-        return $scope.webControll = [
+        return $scope.webCtrl = [
           $scope.wsUri = "ws://192.168.43.5:9002", $scope.output, $scope.init, $scope.output = document.getElementById("output"), $scope.testWebSocket(), test = 'Hello world', testWebSocket()(function() {
+            alert('webController testWebSocket');
             this.websocket = new WebSocket(wsUri);
             this.websocket.onopen = evt(function() {
               return onOpen(evt);

@@ -2,10 +2,11 @@
   window.k$ = {
     apps: ['ks:sample-app', 'ks:tinygrowl', 'ks:ang-app', 'ks:kickstrap-logo'],
     angular: {
-      controllers: ['messages', 'products', 'docs', 'home', 'login'],
+      controllers: ['messages', 'products', 'docs', 'home', 'login', 'blogController', 'webController'],
       directives: ['enter', 'visible', 'repeat'],
       filters: ['startFrom'],
-      pages: ['first-steps', 'apps', 'api', 'coffeescript', 'jade', 'pages', 'partials', 'roots', 'stylus', 'templates', 'acknowledgments', 'optimizations', 'social-login', 'growls']
+      pages: ['first-steps', 'apps', 'api', 'coffeescript', 'jade', 'pages', 'partials', 'roots', 'stylus', 'templates', 'acknowledgments', 'optimizations', 'social-login', 'growls', 'blog'],
+      firebaseName: 'tmwebsitedb'
     },
     firebaseNameVersion: 'v2-0',
     core: ['jquery', 'bootstrap', 'angular', 'fontawesome']
@@ -17,6 +18,9 @@
     'angular': 'github:angular/bower-angular@1.2.1',
     'angularFire': 'github:firebase/angularFire@0.5',
     'ang-app': 'ks:ang-app',
+    'socket': 'ks:ang-app/resources/socket',
+    'btford.socket-io': 'ks:ang-app/resources/socket-io',
+    'angular-touch': 'ks:ang-app/resources/angular-touch',
     'angular-route': 'ks:ang-app/resources/angular-route',
     'gatedScope': 'ks:ang-app/resources/gatedScope',
     'fontawesome': 'github:FortAwesome/Font-Awesome@4.0.3/css/font-awesome.min.css!',
@@ -31,7 +35,8 @@
     },
     'ks:ang-app/resources/angular-route': ['angular'],
     'ks:ang-app/resources/ngprogress': ['angular'],
-    'ks:ang-app/resources/gatedScope': ['angular']
+    'ks:ang-app/resources/gatedScope': ['angular'],
+    'ks:ang-app/resources/angular-touch': ['angular']
   };
 
 }).call(this);

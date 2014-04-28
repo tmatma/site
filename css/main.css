@@ -983,6 +983,9 @@ body.loaded .ks-afterload {
 body.loaded .ks-afterload_visibility {
   visibility: visible;
 }
+.nonDraggableImage {
+  -webkit-user-drag: none;
+}
 .pointer {
   cursor: pointer;
 }

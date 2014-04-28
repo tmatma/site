@@ -1,6 +1,6 @@
 (function() {
-  define(['angular', 'angularFire', 'angular-route', 'firebaseSimpleLogin', 'ngProgress'], function(angular) {
-    return angular.module('app', ['app.controllers', 'app.directives', 'app.filters', 'firebase', 'ngRoute', 'ngProgress']).config([
+  define(['angular', 'angularFire', 'angular-route', 'firebaseSimpleLogin', 'ngProgress', 'angular-touch', 'socket'], function(angular) {
+    return angular.module('app', ['app.controllers', 'app.directives', 'app.filters', 'firebase', 'ngRoute', 'ngTouch', 'btford.socket-io']).config([
       '$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
         var page, _i, _len, _ref, _results;
         _ref = k$.settings.angular.pages;

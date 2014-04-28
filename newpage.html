@@ -7,8 +7,9 @@
     <meta name="description" content="The Elegant Frontend Framework">
     <meta name="author" content="Topi Matikainen">
     <script src="https://jspm.io/system@0.4.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyjNpNBw_VnPm8cgrwzAvSI6Z_EARXY1E&amp;sensor=false"></script>
-    <script src="js/mapsApp.js"></script>
+    <!-- uncomment for maps-->
+    <!--script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAyjNpNBw_VnPm8cgrwzAvSI6Z_EARXY1E&sensor=false')-->
+    <!--script(src='js/mapsApp.js')-->
     <link rel="stylesheet" href="css/main.css">
     <title>
        
@@ -34,7 +35,7 @@
         </div>
       </div>
       <!-- BLOG POSTS-->
-      <div class="container">
+      <div ng-controller="blogCtrl" class="container">
         <div class="row mt centered">
           <div class="col-lg-4 col-lg-offset-4">
             <h3>Events in present moment</h3>
@@ -42,52 +43,16 @@
           </div>
         </div>
         <div class="row mt">
-          <div class="col-lg-4 col-md-4 col-xs-12 desc"><a href="#" class="b-link-fade b-animate-go"><img width="350" src="img/portfolio/dog.jpg" alt="">
+          <div ng-swipe-right="blogSwipeRight()" ng-swipe-left="blogSwipeLeft()" ng-repeat="blog in blogPosts|limitTo:3" class="col-lg-4 col-md-4 col-xs-12 desc"><a href="#" class="b-link-fade b-animate-go"><img width="350" src="img/portfolio/dog.jpg" alt="">
               <div class="b-wrapper">
                 <h4 style="margin-top: 83px" class="b-from-left b-animate b-delay03">Post 1 </h4>
                 <p class="b-from-right b-animate b-delay03">Read More.</p>
               </div>
               <div class="b-top-line"></div></a>
-            <p>Sky is the limit</p>
-            <p class="lead">
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type
-              specimen book.
-            </p>
+            <p>{{blog.title}}</p>
+            <p class="lead">{{blog.lead}}</p>
             <hr-d>
-              <p class="time"><i class="fa fa-comment-o"></i>3 |<i class="fa fa-calendar"></i>14 Nov.</p>
-            </hr-d>
-          </div>
-          <div class="col-lg-4 col-md-4 col-xs-12 desc"><a href="#" class="b-link-fade b-animate-go"><img width="350" src="img/portfolio/guinea.jpg" alt="">
-              <div class="b-wrapper">
-                <h4 style="margin-top: 83px" class="b-from-left b-animate b-delay03">Post 2 </h4>
-                <p class="b-from-right b-animate b-delay03">Read More.</p>
-              </div>
-              <div class="b-top-line"></div></a>
-            <p>Another Cool Stuff</p>
-            <p class="lead">
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type
-              specimen book.
-            </p>
-            <hr-d>
-              <p class="time"><i class="fa fa-comment-o"></i>3 |<i class="fa fa-calendar"></i>14 Nov.</p>
-            </hr-d>
-          </div>
-          <div class="col-lg-4 col-md-4 col-xs-12 desc"><a href="#" class="b-link-fade b-animate-go"><img width="350" src="img/portfolio/house.jpg" alt="">
-              <div class="b-wrapper">
-                <h4 style="margin-top: 83px" class="b-from-left b-animate b-delay03">Post 3 </h4>
-                <p class="b-from-right b-animate b-delay03">Read More.</p>
-              </div>
-              <div class="b-top-line"></div></a>
-            <p>This Is Awesome</p>
-            <p class="lead">
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type
-              specimen book.
-            </p>
-            <hr-d>
-              <p class="time"><i class="fa fa-comment-o"></i>3 |<i class="fa fa-calendar"></i>14 Nov.</p>
+              <p class="time"><i class="fa fa-comment-o"></i>{{blog.date}}<i class="fa fa-calendar"></i></p>
             </hr-d>
           </div>
         </div>
@@ -418,14 +383,6 @@
         </div>
         <div id="map"></div>
       </div>
-      <!-- CALL TO ACTION CTA BAR-->
-      <div id="cta-bar">
-        <div class="container">
-          <div class="row centered">
-            <h4><a href="#">Are You Ready For The Next Step?</a></h4>
-          </div>
-        </div>
-      </div>
       <!-- FOOTER-->
       <div id="f">
         <div class="container">
@@ -552,7 +509,9 @@
       </div>
     </section>
     <script src="//cdn.firebase.com/v0/firebase.js"></script>
-    <script src="js/kickstrap.js"></script><script type="text/javascript">
+    <script src="js/kickstrap.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-socket-io/mock/socket-io.js"> </script><script type="text/javascript">
 (function() {
   k$.ready(function() {
     return jspm["import"]('ks:disqus');
