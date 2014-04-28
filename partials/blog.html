@@ -1,0 +1,24 @@
+
+<!-- BLOG POSTS-->
+<div ng-controller="blogCtrl" class="container ks-afterload">
+  <div class="row mt centered">
+    <div class="col-lg-4 col-lg-offset-4">
+      <h3>Events in present moment</h3>
+      <hr/>
+    </div>
+  </div>
+  <div class="row mt">
+    <div ng-swipe-right="blogSwipeRight()" ng-swipe-left="blogSwipeLeft()" ng-repeat="blog in blogPosts|limitTo:3" class="col-lg-4 col-md-4 col-xs-12 desc"><a href="#" class="b-link-fade b-animate-go"><img width="350" src="img/portfolio/dog.jpg" alt=""/>
+        <div class="b-wrapper">
+          <h4 style="margin-top: 83px" class="b-from-left b-animate b-delay03">Post 1 </h4>
+          <p class="b-from-right b-animate b-delay03">Read More.</p>
+        </div>
+        <div class="b-top-line"></div></a>
+      <p>{{blog.title}}</p>
+      <p class="lead">{{blog.lead}}</p>
+      <hr-d>
+        <p class="time"><i class="fa fa-comment-o">{{blog.date}}</i><i class="fa fa-calendar"></i></p>
+      </hr-d>
+    </div>
+  </div>
+</div>
